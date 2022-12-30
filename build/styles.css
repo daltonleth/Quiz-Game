@@ -1,0 +1,90 @@
+body {
+  font: normal 14px/100% "Andale Mono", AndaleMono, monospace;
+  color: #fff;
+  padding: 50px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #00242b;
+  text-align: center;
+}
+h1 {
+  font-size: 60px;
+  letter-spacing: 0.5rem;
+  color: #7cd8a7;
+}
+#logo {
+  width: 50%;
+  border-radius: 10px;
+}
+.container {
+  margin: auto;
+}
+.question {
+  font-size: 2.5vw;
+  background-color: #00242b;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px #6bbe92 solid;
+  width: 70%;
+  margin: auto;
+}
+.appArea {
+  padding: 30px;
+  border-radius: 25px;
+  background-color: #374954;
+  /* background-image: url("https://www.transparenttextures.com/patterns/cubes.png"); */
+}
+button {
+  display: inline;
+  background-color: #6bbe92;
+  border: 2px #00242b solid; 
+  border-radius: 10px;
+  box-shadow: 5px;
+  margin: 10px auto 10px auto;
+  padding: 30px;
+  text-align: center;
+  color: rgb(59, 59, 59);
+  font-weight: bold;
+  font-size: 3vw;
+  min-width: 90%;
+}
+footer {
+  color:rgb(59, 59, 59)
+}
+
+  @media screen and (max-width: 700px) {
+    .container {
+      margin: 0px;
+      padding: 10px;
+      width: 100%;
+    }
+    body {
+      padding: 0px;
+      width: 100%;
+    }
+    html {
+      padding: 0px;
+      background-color: #374954;
+    }
+    .appArea {
+      border-radius: 0px;
+      padding-top: 5px;
+
+    }
+    button {
+      min-width: 100%;
+      font-size: 5vw;
+      padding: 4vh;
+      margin: 10px auto 10px auto;
+      
+    }
+    .question {
+      font-size: 4vw;
+    }
+    #logo {
+      width: 50%;
+      margin-bottom: 10px;
+      margin-top: 0px;
+    }
+  }
