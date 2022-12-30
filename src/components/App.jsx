@@ -1,9 +1,7 @@
 import React, {useState} from "react";
 import Header from "./Header";
 import Quiz from "./Quiz";
-import questions from "../questions";
 import Score from "./Score";
-import $ from "jquery";
 import axios from "axios";
 
 
@@ -12,9 +10,12 @@ function App() {
   let apiURL = "https://the-trivia-api.com/api/questions";
   let results;
   
-  const [questionNumber, nextQuestion] = React.useState(1);
-  const [points, addPoints] = React.useState(0);
-  const [post, setPost] = React.useState(null);
+  const [questionNumber, nextQuestion] = useState(1);
+  const [points, addPoints] = useState(0);
+  const [post, setPost] = useState(null);
+  const [appAreaStyle, setStyle] = useState({
+    backgroundColor: "",
+  })
   
   React.useEffect(() => {
     axios.get(apiURL).then((response) => {
@@ -28,6 +29,14 @@ function App() {
       addPoints(points + 1);
     } else {
       // console.log("incorrect!");
+      setStyle({
+        backgroundColor: "#D57864",
+      });
+      setTimeout( () => {
+        setStyle({
+        backgroundColor: "",
+      });
+    }, 150);
     }
     nextQuestion(questionNumber + 1);
   }
@@ -59,12 +68,13 @@ function App() {
   // const answers = ['Paris', 'London', 'Rome', 'Madrid'];
 
 
-  return (<div className="container-fluid">
+  return (<div className="container-fluid appArea" style={appAreaStyle}>
 <Header text="Quiz Game" />
 
 {questionNumber >= results.length ? <Score score={points} totalQuestions={results.length} restartFunction={reloadWindow} /> : <div>
 <h3>Points: {points}</h3>
 <Quiz question={question} answers={answers} onAnswerSelected={handleAnswer} /></div>}
+<footer>&copy; 2022 Quiz Quickie <br></br>by Dalton Leth</footer>
   </div>);
 }
 

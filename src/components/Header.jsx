@@ -1,7 +1,7 @@
 import React from "react";
 
 function Header(props) {
-  return <h1>{props.text}</h1>;
+  return <img id="logo" src="cover.png" alt="Quiz Quickie" />;
 }
 
 export default Header;
