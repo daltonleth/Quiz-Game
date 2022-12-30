@@ -48,6 +48,7 @@ button {
   font-weight: bold;
   font-size: 3vw;
   min-width: 90%;
+  line-height: 1.2;
 }
 footer {
   color:rgb(59, 59, 59)
